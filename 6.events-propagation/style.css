@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box1 {
+  background: #cb297b;
+  padding: 50px;
+  display: inline-block;
+}
+
+.box2 {
+  background: #f8ba00;
+  padding: 50px;
+  display: inline-block;
+}
+
+.box3 {
+  background: #00a1ff;
+  width: 400px;
+  height: 200px;
+  display: inline-block;
+}
