@@ -1,44 +1,48 @@
-'use strict';
+// Mengaktifkan mode ketat untuk menghindari kesalahan umum
+"use strict";
 
-const msg = document.getElementById('message');
+// Mengambil elemen dengan ID "message" dari dokumen dan menyimpannya dalam variabel msg
+const msg = document.getElementById("message");
+// Menampilkan elemen msg di konsol
 console.log(msg);
 
-const headings = document.getElementsByTagName('h1');
+// Mengambil semua elemen <h1> dari dokumen dan menyimpannya dalam variabel headings
+const headings = document.getElementsByTagName("h1");
+// Menampilkan elemen headings di konsol
 console.log(headings);
 
-const container = document.getElementById('container');
-const messages = container.getElementsByClassName('message');
-// console.log(messages);
+// Mengambil elemen dengan ID "container" dari dokumen
+const container = document.getElementById("container");
+// Mengambil semua elemen dengan kelas "message" yang berada di dalam container
+const messages = container.getElementsByClassName("message");
+// console.log(messages); // Menampilkan elemen messages di konsol (dihapus dari tampilan)
 
+// Menampilkan objek dokumen di konsol
 console.log(document);
+// Menampilkan elemen container di konsol
 console.log(container);
 
-// show slide 33
+// Menunjukkan bahwa prototipe dari container dan dokumen memiliki kesamaan
+console.log(container.__proto__.__proto__.__proto__.__proto__ === document.__proto__.__proto__.__proto__);
 
-console.log(
-  container.__proto__.__proto__.__proto__.__proto__ ===
-    document.__proto__.__proto__.__proto__
-);
-
+// Menunjukkan bahwa container adalah instance dari Node (dihapus dari tampilan)
 // console.log(document instanceof Node);
 // console.log(container instanceof Node);
 
-// use querySelector
+// Menggunakan querySelector untuk mengambil elemen
 {
-  const message = document.querySelector('.message');
-  console.log('message :>> ', message);
+  // Mengambil elemen pertama dengan kelas "message"
+  const message = document.querySelector(".message");
+  // Menampilkan elemen message di konsol
+  console.log("message :>> ", message);
 
-  // const messages = document.querySelectorAll('.message');
-
-  const messages = document
-    .querySelector('#container')
-    .querySelectorAll('.message');
-
-  // const messages = document.getElementsByID
-  console.log('messages :>> ', messages);
+  // Mengambil semua elemen dengan kelas "message" di dalam container
+  const messages = document.querySelector("#container").querySelectorAll(".message");
+  // Menampilkan elemen messages di konsol
+  console.log("messages :>> ", messages);
 }
 
-// accessor methods reside in the prototype of the Document and the Element, not in the Node prototype
-console.log(Document.prototype.hasOwnProperty('querySelector'));
-console.log(Element.prototype.hasOwnProperty('querySelectorAll'));
-console.log(Node.prototype.hasOwnProperty('querySelectorAll'));
+// Menunjukkan bahwa metode akses berada di prototipe dari Document dan Element, bukan di prototipe Node
+console.log(Document.prototype.hasOwnProperty("querySelector")); // Memeriksa apakah Document memiliki metode querySelector
+console.log(Element.prototype.hasOwnProperty("querySelectorAll")); // Memeriksa apakah Element memiliki metode querySelectorAll
+console.log(Node.prototype.hasOwnProperty("querySelectorAll")); // Memeriksa apakah Node memiliki metode querySelectorAll

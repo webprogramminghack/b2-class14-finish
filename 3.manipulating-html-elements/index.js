@@ -1,110 +1,101 @@
-'use strict';
+"use strict";
 
 // this is illegal
 // these classes are considered "internal" to the browser's implementation of the DOM (Document Object Model).
 // const heading = new HTMLHeadingElement('h1');
 
-// createElement();
+// Membuat elemen <p> baru dan menambahkannya ke body
 {
-  const newParagraph = document.createElement('p'); // Create a <p> element
-  newParagraph.textContent = 'This is a new paragraph.'; // Add text to the paragraph
-  document.body.appendChild(newParagraph); // Append the paragraph to the end of the body
+  const newParagraph = document.createElement("p"); // Membuat elemen <p>
+  newParagraph.textContent = "This is a new paragraph."; // Menambahkan teks ke paragraf
+  document.body.appendChild(newParagraph); // Menambahkan paragraf ke akhir body
 }
 
-// appendChild();
-// appendChild returns the appended element
+// Menambahkan elemen <li> baru ke dalam <ul>
 {
-  const ul = document.querySelector('ul');
-  const li = document.createElement('li');
-  li.textContent = 'New item';
-  ul.appendChild(li); // Add the <li> element as the last child of <ul>
+  const ul = document.querySelector("ul"); // Mencari elemen <ul>
+  const li = document.createElement("li"); // Membuat elemen <li>
+  li.textContent = "New item"; // Menambahkan teks ke <li>
+  ul.appendChild(li); // Menambahkan <li> sebagai anak terakhir dari <ul>
 }
 
-// textContent
+// Mengubah teks dalam elemen <p>
 {
-  const paragraph = document.querySelector('p');
-  paragraph.textContent = 'This text has been changed.';
+  const paragraph = document.querySelector("p"); // Mencari elemen <p>
+  paragraph.textContent = "This text has been changed."; // Mengubah teks dalam <p>
 }
 
-// innerHTML
+// Mengubah konten HTML dalam elemen <div>
 {
-  const div = document.querySelector('div');
-  div.innerHTML = '<h2>New Heading</h2><p>New content inside the div.</p>';
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  div.innerHTML = "<h2>New Heading</h2><p>New content inside the div.</p>"; // Mengubah konten HTML
 }
 
-// after();
+// Menambahkan elemen baru setelah elemen yang sudah ada
 {
-  const existingElement = document.querySelector('p');
-  const newElement = document.createElement('p');
-  newElement.textContent =
-    'This is a new element added after the existing one.';
-  existingElement.after(newElement);
-  // existingElement.before(newElement);
+  const existingElement = document.querySelector("p"); // Mencari elemen <p> yang ada
+  const newElement = document.createElement("p"); // Membuat elemen <p> baru
+  newElement.textContent = "This is a new element added after the existing one."; // Menambahkan teks
+  existingElement.after(newElement); // Menambahkan elemen baru setelah elemen yang ada
 }
 
-// append();
-// append does not return the appended element but allows us to append multiple elements at once
-// if we don't care about the return value, append is preferable than appendChild
+// Menambahkan beberapa elemen sekaligus ke dalam <div>
 {
-  const div = document.querySelector('div');
-  const newElement1 = document.createElement('span');
-  newElement1.textContent = 'New span 1';
-  const newElement2 = document.createElement('span');
-  newElement2.textContent = 'New span 2';
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  const newElement1 = document.createElement("span"); // Membuat elemen <span> baru
+  newElement1.textContent = "New span 1"; // Menambahkan teks ke <span>
+  const newElement2 = document.createElement("span"); // Membuat elemen <span> baru
+  newElement2.textContent = "New span 2"; // Menambahkan teks ke <span>
 
-  div.append(newElement1, newElement2); // Add multiple elements at once
+  div.append(newElement1, newElement2); // Menambahkan beberapa elemen sekaligus
 }
 
-// prepend();
+// Menambahkan elemen baru di awal <div>
 {
-  const div = document.querySelector('div');
-  const newHeading = document.createElement('h1');
-  newHeading.textContent = 'Heading at the beginning';
-  div.prepend(newHeading); // Add to the beginning of the <div> element
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  const newHeading = document.createElement("h1"); // Membuat elemen <h1> baru
+  newHeading.textContent = "Heading at the beginning"; // Menambahkan teks ke <h1>
+  div.prepend(newHeading); // Menambahkan ke awal elemen <div>
 }
 
-// insertAdjacentHTML()
-// "beforebegin": Before the element.
-// "afterbegin": Inside the element, before the first child.
-// "beforeend": Inside the element, after the last child.
-// "afterend": After the element.
+// Menyisipkan HTML di sekitar elemen
 {
-  const div = document.querySelector('div');
-  div.insertAdjacentHTML('beforebegin', '<p>Hello everyone.</p>');
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  div.insertAdjacentHTML("beforebegin", "<p>Hello everyone.</p>"); // Menyisipkan HTML sebelum <div>
 }
 
-// replaceChild();
+// Mengganti elemen anak dalam <div>
 {
-  const parent = document.querySelector('div');
-  const newHeading = document.createElement('h3');
-  newHeading.textContent = 'This is a new heading';
+  const parent = document.querySelector("div"); // Mencari elemen <div>
+  const newHeading = document.createElement("h3"); // Membuat elemen <h3> baru
+  newHeading.textContent = "This is a new heading"; // Menambahkan teks ke <h3>
 
-  const oldHeading = parent.querySelector('h1');
-  parent.replaceChild(newHeading, oldHeading);
+  const oldHeading = parent.querySelector("h1"); // Mencari elemen <h1> yang ada
+  parent.replaceChild(newHeading, oldHeading); // Mengganti <h1> yang ada dengan <h3> baru
 }
 
-// cloneNode();
+// Mengkloning elemen <div>
 {
-  const div = document.querySelector('div');
-  const clonedDiv = div.cloneNode(true); // Clone the div and its children
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  const clonedDiv = div.cloneNode(true); // Mengkloning <div> dan anak-anaknya
 
-  document.body.appendChild(clonedDiv); // Append the cloned div to the body
+  document.body.appendChild(clonedDiv); // Menambahkan <div> yang dikloning ke body
 }
 
-// removeChild();
+// Menghapus elemen anak dari <div>
 {
-  const div = document.querySelector('div');
-  const h3 = div.querySelector('h3');
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  const h3 = div.querySelector("h3"); // Mencari elemen <h3> yang ada
 
-  div.removeChild(h3); // Remove the <h3> element from the <div>
+  div.removeChild(h3); // Menghapus elemen <h3> dari <div>
 }
 
-// insertBefore();
+// Menyisipkan elemen baru sebelum elemen yang ada
 {
-  const div = document.querySelector('div');
-  const newHeading = document.createElement('h1');
-  newHeading.textContent = 'This is a new heading';
+  const div = document.querySelector("div"); // Mencari elemen <div>
+  const newHeading = document.createElement("h1"); // Membuat elemen <h1> baru
+  newHeading.textContent = "This is a new heading"; // Menambahkan teks ke <h1>
 
-  const paragraph = div.querySelector('p');
-  div.insertBefore(newHeading, paragraph);
+  const paragraph = div.querySelector("p"); // Mencari elemen <p> yang ada
+  div.insertBefore(newHeading, paragraph); // Menyisipkan <h1> baru sebelum <p>
 }

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function displayMsg(e) {
   // console.log('Button clicked from Fn');
@@ -8,7 +8,7 @@ function displayMsg(e) {
   // console.log(this);
 }
 
-const button = document.querySelector('button');
+const button = document.querySelector("button");
 button.onclick = function (e) {
   console.log(e.target.textContent);
 };

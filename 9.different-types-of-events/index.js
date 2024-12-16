@@ -1,53 +1,62 @@
-'use strict';
+"use strict";
 
-// mouse event
-const mouseButton = document.getElementById('mouseButton');
+// Mendapatkan elemen tombol dengan ID 'mouseButton'
+const mouseButton = document.getElementById("mouseButton");
 
-mouseButton.addEventListener('click', () => alert('Button clicked!'));
-mouseButton.addEventListener('mouseover', () => console.log('Mouse over!'));
-mouseButton.addEventListener('mouseout', () => console.log('Mouse out!'));
+// Menambahkan event listener untuk event 'click' pada tombol
+mouseButton.addEventListener("click", () => alert("Button clicked!")); // Menampilkan alert saat tombol diklik
+// Menambahkan event listener untuk event 'mouseover' pada tombol
+mouseButton.addEventListener("mouseover", () => console.log("Mouse over!")); // Menampilkan pesan di konsol saat mouse berada di atas tombol
+// Menambahkan event listener untuk event 'mouseout' pada tombol
+mouseButton.addEventListener("mouseout", () => console.log("Mouse out!")); // Menampilkan pesan di konsol saat mouse keluar dari tombol
 
-// keyboard event
-const inputField = document.getElementById('inputField');
+// Mendapatkan elemen input dengan ID 'inputField'
+const inputField = document.getElementById("inputField");
 
-inputField.addEventListener('keydown', (event) =>
-  console.log('Key down:', event.key)
+// Menambahkan event listener untuk event 'keydown' pada input
+inputField.addEventListener(
+  "keydown",
+  (event) => console.log("Key down:", event.key) // Menampilkan kunci yang ditekan di konsol
 );
-inputField.addEventListener('keyup', (event) =>
-  console.log('Key up:', event.key)
+// Menambahkan event listener untuk event 'keyup' pada input
+inputField.addEventListener(
+  "keyup",
+  (event) => console.log("Key up:", event.key) // Menampilkan kunci yang dilepaskan di konsol
 );
-inputField.addEventListener('keypress', (event) => {
-  // console.log(event);
-  if (event.key === 'Enter') {
-    console.log('Enter key pressed');
+// Menambahkan event listener untuk event 'keypress' pada input
+inputField.addEventListener("keypress", (event) => {
+  // console.log(event); // Menampilkan objek event di konsol (dapat diaktifkan untuk debugging)
+  if (event.key === "Enter") {
+    // Memeriksa apakah kunci yang ditekan adalah 'Enter'
+    console.log("Enter key pressed"); // Menampilkan pesan di konsol jika 'Enter' ditekan
   }
 });
 
-// form events
-const form = document.getElementById('myForm');
+// Mendapatkan elemen form dengan ID 'myForm'
+const form = document.getElementById("myForm");
 
-form.addEventListener('submit', (event) => {
-  // console.log(event);
-  event.preventDefault(); // Mencegah reload halaman
-  alert('Form submitted!');
+// Menambahkan event listener untuk event 'submit' pada form
+form.addEventListener("submit", (event) => {
+  // console.log(event); // Menampilkan objek event di konsol (dapat diaktifkan untuk debugging)
+  event.preventDefault(); // Mencegah reload halaman saat form disubmit
+  alert("Form submitted!"); // Menampilkan alert saat form disubmit
 });
 
-// window events
-// Window resize event listener
-window.addEventListener('resize', () => {
-  const width = window.innerWidth; // Get the width of the window
-  const height = window.innerHeight; // Get the height of the window
-  console.log(`Window resized: Width = ${width}, Height = ${height}`);
+// Menambahkan event listener untuk event 'resize' pada window
+window.addEventListener("resize", () => {
+  const width = window.innerWidth; // Mendapatkan lebar jendela
+  const height = window.innerHeight; // Mendapatkan tinggi jendela
+  console.log(`Window resized: Width = ${width}, Height = ${height}`); // Menampilkan ukuran jendela di konsol
 });
 
-// Window scroll event listener
-window.addEventListener('scroll', () => {
-  const scrollX = window.scrollX; // Get the horizontal scroll position
-  const scrollY = window.scrollY; // Get the vertical scroll position
-  console.log(`Page scrolled: X = ${scrollX}, Y = ${scrollY}`);
+// Menambahkan event listener untuk event 'scroll' pada window
+window.addEventListener("scroll", () => {
+  const scrollX = window.scrollX; // Mendapatkan posisi scroll horizontal
+  const scrollY = window.scrollY; // Mendapatkan posisi scroll vertikal
+  console.log(`Page scrolled: X = ${scrollX}, Y = ${scrollY}`); // Menampilkan posisi scroll di konsol
 });
 
-// Window load event listener
-window.addEventListener('load', () => {
-  console.log('Page loaded');
+// Menambahkan event listener untuk event 'load' pada window
+window.addEventListener("load", () => {
+  console.log("Page loaded"); // Menampilkan pesan di konsol saat halaman selesai dimuat
 });

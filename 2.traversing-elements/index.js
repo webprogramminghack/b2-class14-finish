@@ -1,41 +1,41 @@
-'use strict';
+"use strict";
 
-// get parent
-const text = document.querySelector('.text');
-console.log(text.parentElement);
+// Mendapatkan elemen parent dari elemen dengan kelas "text"
+const text = document.querySelector(".text");
+console.log(text.parentElement); // Menampilkan elemen parent dari elemen "text"
 
 // Memilih Elemen Anak
 {
-  const container = document.querySelector('.container');
+  const container = document.querySelector(".container"); // Mengambil elemen dengan kelas "container"
 
   const firstChild = container.firstElementChild; // Elemen anak pertama
   const lastChild = container.lastElementChild; // Elemen anak terakhir
 
-  console.log(firstChild); // <p class="text">Paragraph 1</p>
-  console.log(lastChild); // <p class="text">Paragraph 4</p>
+  console.log(firstChild); // Menampilkan elemen anak pertama
+  console.log(lastChild); // Menampilkan elemen anak terakhir
 }
 
-// what happens if we use firstChild instead of firstElementChild
+// Menjelaskan apa yang terjadi jika kita menggunakan firstChild daripada firstElementChild
 {
-  const parent = document.querySelector('.container');
-  console.log(parent.firstChild);
+  const parent = document.querySelector(".container"); // Mengambil elemen dengan kelas "container"
+  console.log(parent.firstChild); // Menampilkan firstChild, yang bisa jadi bukan elemen (misalnya, teks kosong)
 }
 
 // Memilih Elemen Sibling
 {
-  const container = document.querySelector('.container');
+  const container = document.querySelector(".container"); // Mengambil elemen dengan kelas "container"
 
-  const firstChild = container.firstElementChild;
+  const firstChild = container.firstElementChild; // Elemen anak pertama
   const secondParagraph = firstChild.nextElementSibling; // Elemen sibling setelah paragraf pertama
-  const firstParagraph = secondParagraph.previousElementSibling; // Elemen sibling setelah paragraf kedua
+  const firstParagraph = secondParagraph.previousElementSibling; // Elemen sibling sebelum paragraf kedua
 
-  console.log(secondParagraph); // <p class="text">Paragraph 2</p>
-  console.log(firstParagraph); // <p class="text">Paragraph 3</p>
+  console.log(secondParagraph); // Menampilkan elemen sibling kedua
+  console.log(firstParagraph); // Menampilkan elemen sibling pertama
 }
 
-// Mengambil semua element child
+// Mengambil semua elemen child
 {
-  const container = document.querySelector('.container');
-  const paragraphs = container.children;
-  console.log(paragraphs);
+  const container = document.querySelector(".container"); // Mengambil elemen dengan kelas "container"
+  const paragraphs = container.children; // Mengambil semua elemen anak dari container
+  console.log(paragraphs); // Menampilkan semua elemen anak
 }
